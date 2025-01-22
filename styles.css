@@ -191,7 +191,7 @@ button:hover {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    height: auto;  /* Adjust height to content */
+    height: auto;  
     width: 100%;
     display: flex;
     justify-content: center;
@@ -218,14 +218,14 @@ button:hover {
 }
 
 .image-gallery img {
-    transition: transform 0.3s ease; /* Smooth transition for scaling */
+    transition: transform 0.3s ease; 
     cursor: pointer;
 }
 
 /* When image is clicked (zoomed in) */
 .image-gallery img.zoomed {
-    transform: scale(2); /* Zoom in the image (adjust the scale as necessary) */
-    z-index: 9999; /* Bring the image to the front */
+    transform: scale(2); 
+    z-index: 9999; 
 }
 
 .about-me {
@@ -272,7 +272,7 @@ button:hover {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-    height: auto;  /* Adjust to fit content */
+    height: auto;  
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -280,36 +280,36 @@ button:hover {
 }
 
 .about-me-info img {
-    width: 300px; /* Set the size of the image */
+    width: 300px; 
     height: 300px;
     border-radius: 50%;
     object-fit: cover;
-    object-position: top; /* Keep the image centered */
-    transition: transform 0.3s ease-in-out; /* Smooth zoom effect */
-    max-width: 100%;  /* Ensure image is contained */
+    object-position: top; 
+    transition: transform 0.3s ease-in-out; 
+    max-width: 100%;  
     max-height: 100%;
-    margin-bottom: 20px; /* Space between image and text */
+    margin-bottom: 20px; 
 }
 
-/* Zoom the image when hovering, while keeping the container fixed */
+
 .about-me-info img:hover {
-    transform: scale(1.2); /* Zoom in the image by 20% */
+    transform: scale(1.2); 
 }
 
-/* Two columns for text below the image */
+
 .about-me-text-sections {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    max-width: 1200px; /* Set max width for the text container */
-    gap: 20px; /* Add some space between columns */
-    flex-wrap: wrap; /* Ensure responsiveness on smaller screens */
+    max-width: 1200px;
+    gap: 20px; 
+    flex-wrap: wrap; 
 }
 
 .about-me-section {
     flex: 1;
     padding: 20px;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background for contrast */
+    background-color: rgba(0, 0, 0, 0.5); 
     border-radius: 8px;
     margin-bottom: 20px;
 }
@@ -392,7 +392,7 @@ button:hover {
     margin-bottom: 20px;
     padding-top: 30px;
 }
-/* #764b8b*/
+
 
 
 
@@ -407,37 +407,37 @@ button:hover {
 }
 .icon-container {
     display: flex;
-    justify-content: center; /* Center the icons horizontally */
-    gap: 20px; /* Add space between the icons */
-    align-items: center; /* Ensures the icons are vertically aligned */
+    justify-content: center; 
+    gap: 20px;
+    align-items: center; 
 }
 
 .icon-container img {
-    width: 60px; /* Set a consistent width */
-    height: 60px; /* Set a consistent height */
-    object-fit: contain; /* Maintain the aspect ratio of the icons */
-    padding: 0; /* Remove any internal padding */
-    margin: 0; /* Remove any external margins */
-    box-sizing: border-box; /* Ensures padding and borders are included in size calculation */
+    width: 60px; 
+    height: 60px; 
+    object-fit: contain; 
+    padding: 0;
+    margin: 0; 
+    box-sizing: border-box; 
 }
 
 #linked-in, #github {
-    background-color: transparent; /* Ensures no background color interferes */
-    display: inline-block; /* Keeps the images inline and aligned */
+    background-color: transparent; 
+    display: inline-block; 
 }
 .icon-container img:hover {
-    transform: scale(1.2); /* Zoom in the image by 20% */
+    transform: scale(1.2); 
 }
 
 footer {
-    background-color: #333; /* Dark background color */
-    color: #fff; /* White text color */
+    background-color: #333; 
+    color: #fff; 
     text-align: center;
     padding: 20px 0;
     margin-top: 20px;
-    position: relative; /* Ensures it stays at the bottom */
+    position: relative; 
     bottom: 0;
-    width: 100%; /* Full width */
+    width: 100%; 
 }
 
 .footer-container {
