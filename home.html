@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kamron's Canvas</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .full-size {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1000;
+            max-width: 90%;
+            max-height: 90vh;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            background: white;
+            border: 2px solid black;
+        }
+
+        /* Zooming images class */
+        .zoomed {
+            transform: scale(1.5); /* Zoom effect */
+            transition: transform 0.3s ease; /* Smooth transition */
+        }
+
+        /* Hiding images in the filter function */
+        .hidden {
+            display: none;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+     <div class="header-container">
+        <header>
+            <img class="logo" src="kamcanvass.png" alt="brush">
+            <nav>
+                <ul class="nav_links">
+                    <!-- Link to scroll to respective sections -->
+                    <li><a href="#homebutton">Home</a></li>
+                    <li><a href="#portfoliobutton">Portfolio</a></li>
+                    <li><a href="#aboutmebutton">About Me</a></li>
+                    <li><a href="#contactbutton">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+
+    <div class="image" id="homebutton">
+        <div class="image-overlay">
+            <h1 id="hello-world">Hello, World!</h1>
+            <h2 id="intro">Welcome to Kamron's Canvas—a space where creativity comes to life. Explore my journey through art, from sketches to digital designs. Dive in and enjoy!</h2>
+        </div>
+    </div>
+
+    <div class="transitioner" id="portfoliobutton"></div>
+
+    <div class="portfolio">
+        <h2 id="portfolio-text">PORTFOLIO</h2>
+        <p id="portfolio-sub">Hey! Here’s a peek into my creative world. Explore my art, and if something catches your eye, feel free to reach out!</p>
+        <hr id="portfolio-divider">
+        <div class="category-buttons">
+            <button class="category-button" onclick="filterImages('all')">All</button>
+            <button class="category-button" onclick="filterImages('traditional')">Traditional</button>
+            <button class="category-button" onclick="filterImages('acrylic')">Acrylic</button>
+            <button class="category-button" onclick="filterImages('digital')">Digital</button>
+            <button class="category-button" onclick="filterImages('pen/ink')">Pen/Ink</button>
+        </div>
+    </div>
+
+    <div class="image-gallery">
+        <img src="fallenangel.png" alt="angel" data-category="traditional" onclick="change(this)">
+        <img src="skater.png" alt="skater" data-category="traditional" onclick="change(this)">
+        <img src="revisedmj.jpg" alt="jordan" data-category="acrylic" onclick="change(this)">
+        <img src="carti.jpg" alt="carti" data-category="pen/ink" onclick="change(this)">
+        <img src="revisedcarti.jpg" alt="carti 2" data-category="traditional" onclick="change(this)">
+        <img src="revisedchief.jpg" alt="chief" data-category="traditional" onclick="change(this)">
+        <img src="doom.png" alt="doom" data-category="digital" onclick="change(this)">
+        <img src="revisedgohan.jpg" alt="gohan" data-category="traditional" onclick="change(this)">
+        <img src="revisedkamkhloe.jpg" alt="fam" data-category="acrylic" onclick="change(this)">
+        <img src="kanye.jpg" alt="kanye" data-category="pen/ink" onclick="change(this)">
+        <img src="lucki.jpg" alt="lucki" data-category="traditional" onclick="change(this)">
+        <img src="revisedme.jpg" alt="kam" data-category="acrylic" onclick="change(this)">
+        <img src="mike.jpg" alt="mike" data-category="pen/ink" onclick="change(this)">
+        <img src="mjdigital.png" alt="mj digi" data-category="digital" onclick="change(this)">
+        <img src="revisedmystery.jpg" alt="man" data-category="traditional" onclick="change(this)">
+        <img src="scoob.jpg" alt="dog" data-category="traditional" onclick="change(this)">
+        <img src="scream.jpg" alt="scream" data-category="pen/ink" onclick="change(this)">
+        <img src="revisedtravis.jpg" alt="travis" data-category="acrylic" onclick="change(this)">
+        <img src="sticky.jpg" alt="x" data-category="pen/ink" onclick="change(this)">
+        <img src="revisedlucki.jpg" alt="lucki" data-category="traditional" onclick="change(this)">
+        <img src="revisedlady.jpg" alt="x" data-category="traditional" onclick="change(this)">
+        <img src="reviseddeku.jpg" alt="x" data-category="traditional" onclick="change(this)">
+        <img src="revisedpink.jpg" alt="x" data-category="traditional" onclick="change(this)">
+        <img src="revisedthug.jpg" alt="x" data-category="traditional" onclick="change(this)">
+        <img src="revisedmason.jpg" alt="x" data-category="traditional" onclick="change(this)">
+        <img src="revisedmariah.jpg" alt="x" data-category="traditional" onclick="change(this)">
+        <img src="revisedyeat.jpg" alt="yeat" data-category="traditional" onclick="change(this)">
+        <img src="funnydog.jpg" alt="funny dog" data-category="traditional" onclick="change(this)">
+        <img src="cat.jpg" alt="cat" data-category="traditional" onclick="change(this)">
+        <img src="teenx.jpg" alt="teenx" data-category="pen/ink" onclick="change(this)">
+        <img src="glok.jpg" alt="glok" data-category="traditional" onclick="change(this)">
+        <img src="brent.jpg" alt="brent" data-category="traditional" onclick="change(this)">
+        <img src="luffy.jpg" alt="luffy" data-category="traditional" onclick="change(this)">
+        <img src="jojo.jpg" alt="jojo" data-category="digital" onclick="change(this)">
+    </div>
+    <div class="transitioner" id="aboutmebutton"></div>
+    <div class="about-me">
+        <h2 id="about-me-text">ABOUT ME</h2>
+        <p id="about-me-sub">Hey! I’m Kamron, a sophomore information systems student at UMBC with a passion for creativity, coding, and design.</p>
+        <hr id="aboutme-divider">
+    </div>
+
+    <div class="about-me-info">
+        <img class="about-me-img" src="kamronmfinal.jpg" alt="kamron">
+        <div class="about-me-text-sections">
+        <div class="about-me-section">
+            <h3>Background</h3>
+            <p>I thrive on problem-solving and enjoy exploring new tools and techniques. Every project is an opportunity to learn and grow, pushing myself to refine both my technical and creative skills.</p>
+        </div>
+        <div class="about-me-section">
+            <h3>Hobbies</h3>
+            <p>Outside of academics, I enjoy playing basketball, making art, watching anime, and lifting weights. These hobbies help me maintain a balanced and creative lifestyle.</p>
+        </div>
+        <div class="about-me-section">
+            <h3>Skills</h3>
+            <p>Proficient in <strong>Python</strong>, <strong>C++</strong>, <strong>JavaScript</strong>, <strong>HTML</strong>, <strong>CSS</strong>, and <strong>Processing</strong>. Experienced with <strong>web development</strong>, <strong>data analysis</strong>, <strong>problem-solving</strong>, and <strong>interactive design</strong>. Strong foundation in <strong>object-oriented programming</strong> and <strong>creative coding</strong>.</p>
+        </div>
+    </div>
+</div>
+    <div class="transitioner" id="contactbutton"></div>
+    <div class="contact">
+    <h2 id="contact-page-text">CONTACT ME</h2>
+    <p id="contact-page-sub">If you have any questions, comments, or just want to connect, feel free to reach out!</p>
+    <hr id="contactpage-divider">
+    <div class="icon-container">
+    <a href="https://www.linkedin.com/in/kamron-mason-25a87b299/" target="_blank" rel="noopener noreferrer">
+        <img id="linked-in" src="linkedinnnn.png" alt="LinkedIn Icon">
+    </a>
+    <a href="https://github.com/kamronm1" target="_blank" rel="noopener noreferrer">
+        <img id="github" src="githubb.png" alt="GitHub Icon">
+    </a>
+    </div>
+    </div>
+
+
+
+
+
+<script>
+    function change(element) {
+        element.classList.toggle("zoomed");
+    }
+
+    function filterImages(category) {
+        const images = document.querySelectorAll('.image-gallery img');
+        images.forEach(image => {
+            if (category === 'all' || image.dataset.category === category) {
+                image.classList.remove('hidden');
+            } else {
+                image.classList.add('hidden');
+            }
+        });
+    }
+</script>
+<script src="script.js"></script>
+<footer>
+    <div class="footer-container">
+        <p>&copy; 2025 Kamron Mason. All rights reserved.</p>
+        <div class="social-links">
+            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a> |
+            <a href="https://www.github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
